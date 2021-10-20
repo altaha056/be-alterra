@@ -1,24 +1,22 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
 	"math"
+	"os"
 	// "strconv"
 )
 
 func main(){
 	// luastabung()
-	gradeNilai()
+	// gradeNilai()
 	// faktorBilangan()	
 	// bilanganPrima()
 	// cetakTabelPerkalian()
 	// exponentiation()
-	// percent()
-}
-
-func percent(){
-	
-	print(120%59)
+	// playWithAsterisk()
+	palindrome()
 }
 
 func cetakTabelPerkalian(){
@@ -45,9 +43,13 @@ func playWithAsterisk(){
 	fmt.Scan(&inputUser)
 
 	for i:=1;i<=inputUser;i++{
-		for j:=1;j<=inputUser;j++{
-
+		for j:=inputUser-i;j>=1;j--{
+			print(" ")
 		}
+		for k:=1;k<=i;k++{
+			print("* ")
+		}
+		println()
 	}
 }
 
@@ -66,7 +68,21 @@ func exponentiation(){
 }
 
 func palindrome(){
+	
+	print("Masukkan kata: ")
+	baca := bufio.NewScanner(os.Stdin)
+	baca.Scan() 
+	line := baca.Text()
+	// fmt.Printf("Input was: %q\n", line)
+	for i:=0;  i<len(line);i++{
+		fmt.Printf("%c\n",line[i])
+	}
 
+	kebalik:=len(line)
+	for j := kebalik; j >0; j-- {
+		fmt.Printf("%c\n",line[j-1])
+	}
+	
 }
 
 func bilanganPrima(){
