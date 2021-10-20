@@ -9,14 +9,14 @@ import (
 )
 
 func main(){
-	// luastabung()
+	luastabung()
 	// gradeNilai()
 	// faktorBilangan()	
 	// bilanganPrima()
 	// cetakTabelPerkalian()
 	// exponentiation()
 	// playWithAsterisk()
-	palindrome()
+	// palindrome()
 }
 
 func cetakTabelPerkalian(){
@@ -55,13 +55,11 @@ func playWithAsterisk(){
 
 
 func exponentiation(){
-	
 	var x,n float64
 	print("base: ")
 	fmt.Scan(&x)
 	print("exponent: ")
 	fmt.Scan(&n)
-
 	sum:=math.Pow(x,n)
 	// s:=strconv.Itoa(int(sum))
 	print(int(sum))
@@ -103,13 +101,10 @@ func bilanganPrima(){
 	var inputUser int
 	print("Masukkan nilai: ")
 	fmt.Scan(&inputUser)
-
-	
 	var m,flag int
 	m=0
 	flag=0
 	m=inputUser/2
-	
 	if(inputUser<=1){
 		println("false")
 		flag=1
@@ -121,11 +116,9 @@ func bilanganPrima(){
 			break
 		}
 	}}
-
 	if(flag==0){
 			println("Bilangan prima")
 	}
-
 }
 
 func faktorBilangan(){
@@ -163,11 +156,8 @@ func gradeNilai(){
 	}else{
 		keteranganNilai="tidak valid"
 	}
-
 	// nilai:=strconv.Itoa(studentScore)
-	
 	fmt.Print("Nilai dari ",namaSiswa," adalah ",studentScore," bernilai ",keteranganNilai)
-	
 }
 
 func luastabung(){
