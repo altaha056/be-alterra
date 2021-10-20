@@ -73,15 +73,29 @@ func palindrome(){
 	baca := bufio.NewScanner(os.Stdin)
 	baca.Scan() 
 	line := baca.Text()
-	// fmt.Printf("Input was: %q\n", line)
-	for i:=0;  i<len(line);i++{
-		fmt.Printf("%c\n",line[i])
+	long:=len(line)
+	rlong:=len(line)
+	flag:=0
+
+	for i := 0; i < long; i++ {
+		// fmt.Printf("%c\n",line[i])	
+		// fmt.Printf("%c\n",line[rlong-1])
+		a:=line[i]
+		b:=line[rlong-1]
+		if(a==b){
+			flag=0
+		}else{
+			flag=+1
+		}
+		rlong--	
 	}
 
-	kebalik:=len(line)
-	for j := kebalik; j >0; j-- {
-		fmt.Printf("%c\n",line[j-1])
+	if flag>0{
+		print("false")
+	} else if flag==0{
+		print("true")
 	}
+	
 	
 }
 
