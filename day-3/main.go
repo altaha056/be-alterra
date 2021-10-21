@@ -15,10 +15,10 @@ func main(){
 	// arrayMerge()
 
 	// nomor 4
-	// angkaMunculSekali()
+	angkaMunculSekali()
 	
 	// nomor 5
-	pairWithTargetSum()
+	// pairWithTargetSum()
 }
 func bilanganPrima(){
 	var inputUser int
@@ -72,17 +72,28 @@ func arrayMerge(){
 }
 
 func angkaMunculSekali(){
-	a:=[]int{1,2,3,4,5,1,2,3}
+	a:=[]int{1,2,3,4,5,1,2,3,4,5,3}
 
-	b:=[]int{}
+	b:=a
+
 	for i := 0; i < len(a); i++ {
 		for j := i+1; j < len(a); j++ {
 			if a[i]==a[j]{
-				b=append(b, a[i])
+				b[i]=0
+				b[j]=0
 			}
 		}
 	}
 
+	for i := 0; i < len(b); i++ {
+		if b[i]==0{
+			copy(b[i:], b[i+1:]) // Shift a[i+1:] left one index.
+			b[len(b)-1] = 0     // Erase last element (write zero value).
+			b = b[:len(b)-1]     // Truncate slice.
+			i=-1
+		}
+	}
+	
 	fmt.Printf("%v",b)
 }
 
