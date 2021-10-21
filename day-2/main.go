@@ -12,10 +12,10 @@ func main(){
 	// luastabung()
 	// gradeNilai()
 	// faktorBilangan()	
-	bilanganPrima()
+	// bilanganPrima()
 	// cetakTabelPerkalian()
 	// exponentiation()
-	// playWithAsterisk()
+	playWithAsterisk()
 	// palindrome()
 }
 
@@ -29,7 +29,7 @@ func cetakTabelPerkalian(){
 		for i:=1;i<=inputUser;i++{
 			for j:=1;j<=9;j++{
 				print(i*j)
-				print(" ")
+				print("\t")
 			}
 			println()
 		}
@@ -104,14 +104,14 @@ func bilanganPrima(){
 	var m,flag int
 	m=0
 	flag=0
-	m=inputUser/2
+	m=int(math.Sqrt(float64(inputUser)))
 	if(inputUser<=1){
-		println("false")
+		println("not prime")
 		flag=1
 	}else{
 	for i:=2;i<=m;i++{
 		if inputUser%i==0{
-			println("false")
+			println("not prime")
 			flag=1
 			break
 		}
