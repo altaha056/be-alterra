@@ -9,10 +9,10 @@ import (
 )
 
 func main(){
-	luastabung()
+	// luastabung()
 	// gradeNilai()
 	// faktorBilangan()	
-	// bilanganPrima()
+	bilanganPrima()
 	// cetakTabelPerkalian()
 	// exponentiation()
 	// playWithAsterisk()
@@ -75,7 +75,7 @@ func palindrome(){
 	rlong:=len(line)
 	flag:=0
 
-	for i := 0; i < long; i++ {
+	for i := 0; i < long/2; i++ {
 		// fmt.Printf("%c\n",line[i])	
 		// fmt.Printf("%c\n",line[rlong-1])
 		a:=line[i]
