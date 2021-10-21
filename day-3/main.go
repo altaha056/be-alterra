@@ -12,9 +12,13 @@ func main(){
 	// exponentiation()
 
 	// nomor 3
-	arrayMerge()
+	// arrayMerge()
+
 	// nomor 4
+	// angkaMunculSekali()
+	
 	// nomor 5
+	pairWithTargetSum()
 }
 func bilanganPrima(){
 	var inputUser int
@@ -65,4 +69,34 @@ func arrayMerge(){
 	}
 	c:=append(a,b...)
 	fmt.Println(c)
+}
+
+func angkaMunculSekali(){
+	a:=[]int{1,2,3,4,5,1,2,3}
+
+	b:=[]int{}
+	for i := 0; i < len(a); i++ {
+		for j := i+1; j < len(a); j++ {
+			if a[i]==a[j]{
+				b=append(b, a[i])
+			}
+		}
+	}
+
+	fmt.Printf("%v",b)
+}
+
+func pairWithTargetSum(){
+	a:=[]int{1,2,3,4,5,6}
+	target:=7
+
+	for i := 0; i < len(a); i++ {
+		for j := i+1; j < len(a); j++ {
+			if a[i]+a[j]==target {
+				c:=[]int{i,j}
+				fmt.Printf("%v",c)
+				break
+			}
+		}
+	}
 }
