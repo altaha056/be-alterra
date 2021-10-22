@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math"
+	"strconv"
 )
 func main(){
 	// nomor 1
@@ -15,10 +16,10 @@ func main(){
 	// arrayMerge()
 
 	// nomor 4
-	angkaMunculSekali()
+	// angkaMunculSekali()
 	
 	// nomor 5
-	// pairWithTargetSum()
+	pairWithTargetSum()
 }
 func bilanganPrima(){
 	var inputUser int
@@ -72,10 +73,13 @@ func arrayMerge(){
 }
 
 func angkaMunculSekali(){
-	a:=[]int{1,2,3,4,5,1,2,3,4,5,3}
-
+	input:="12341235"
+	a:=[]int{}
+	for i := 0; i < len(input); i++ {
+		temp,_:=strconv.Atoi( input[i:i+1])
+		a = append(a, temp)
+	}
 	b:=a
-
 	for i := 0; i < len(a); i++ {
 		for j := i+1; j < len(a); j++ {
 			if a[i]==a[j]{
@@ -84,7 +88,6 @@ func angkaMunculSekali(){
 			}
 		}
 	}
-
 	for i := 0; i < len(b); i++ {
 		if b[i]==0{
 			copy(b[i:], b[i+1:]) // Shift a[i+1:] left one index.
@@ -93,7 +96,6 @@ func angkaMunculSekali(){
 			i=-1
 		}
 	}
-	
 	fmt.Printf("%v",b)
 }
 
