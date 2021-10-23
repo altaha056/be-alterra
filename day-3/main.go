@@ -20,6 +20,7 @@ func main(){
 	
 	// nomor 5
 	pairWithTargetSum()
+	// fmt.Println(PairSum([]int{8, 5, 1, 2, 3, 4}, 6)) // [1, 3]
 }
 func bilanganPrima(){
 	var inputUser int
@@ -44,7 +45,6 @@ func bilanganPrima(){
 			println("Bilangan prima")
 	}
 }
-
 func exponentiation(){
 	var x,n float64
 	print("base: ")
@@ -55,7 +55,6 @@ func exponentiation(){
 	// s:=strconv.Itoa(int(sum))
 	print(int(sum))
 }
-
 func arrayMerge(){
 	a:=[]string{"king","devil jin","akuma"}
 	b:=[]string{"eddie","steve","geese"}
@@ -71,7 +70,6 @@ func arrayMerge(){
 	c:=append(a,b...)
 	fmt.Println(c)
 }
-
 func angkaMunculSekali(){
 	input:="12341235"
 	a:=[]int{}
@@ -98,9 +96,8 @@ func angkaMunculSekali(){
 	}
 	fmt.Printf("%v",b)
 }
-
 func pairWithTargetSum(){
-	a:=[]int{1,2,3,4,5,6}
+	a:=[]int{7,1,2,3,4,5,6}
 	target:=7
 
 	for i := 0; i < len(a); i++ {
@@ -112,4 +109,18 @@ func pairWithTargetSum(){
 			}
 		}
 	}
+}
+func PairSum(arr []int, target int) []int {
+	l := 0
+	r := len(arr) - 1
+	sum := arr[l] + arr[r]
+	for sum != target {
+		if sum > target {
+			r -= 1
+		} else {
+			l += 1
+		}
+		sum = arr[l] + arr[r]
+	}
+	return []int{l, r}
 }
