@@ -8,7 +8,7 @@ func main(){
 	fmt.Println(fibo(5))  // 5
 	fmt.Println(fibo(6))  // 8
 	fmt.Println(fibo(7))  // 13
-	fmt.Println(fibo(9))  // 13
+	fmt.Println(fibo(9))  // 34
 	fmt.Println(fibo(10)) // 55
 }
 
