@@ -26,6 +26,4 @@ END %%
 
 
 //nomor8
-
-
-
+SELECT * FROM product WHERE product.id_product NOT IN(SELECT transaction_detail.product_id FROM transaction_detail)
