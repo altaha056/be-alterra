@@ -1,14 +1,14 @@
 //nomor1
-SELECT id FROM transcation WHERE id_pelanggan=1 or id_pelanggan=2
+SELECT * FROM transcation WHERE id_pelanggan=1 UNION SELECT * FROM transcation WHERE id_pelanggan=2
 
 //nomor2
 SELECT SUM(product.price) as total_price from (transcation JOIN product ON transcation.id_product=product.id) WHERE transcation.id_pelanggan=1
 
 //nomor3
-SELECT SUM(price) from product where product_type='adidas'
+SELECT COUNT(product.price) as total_price from (transcation JOIN product ON transcation.id_product=product.id) WHERE product.product_type='adidas'
 
 //nomor4
-SELECT * from product INNER JOIN transcation
+SELECT * from transcation INNER JOIN product ON transcation.id_product=product.id
 
 //nomor5
 SELECT * from product INNER JOIN transcation INNER JOIN pelanggan
