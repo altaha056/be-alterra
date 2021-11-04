@@ -25,7 +25,7 @@ END %%
 //nomor7
 DELIMITER &&
 CREATE TRIGGER hapus_data_detail_transaksi
-AFTER DELETE ON transaction_detail FOR EACH ROW
+BEFORE DELETE ON transaction_detail FOR EACH ROW
 BEGIN
 DECLARE d_user_id INT;
 DECLARE d_qty INT;
