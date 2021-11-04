@@ -4,6 +4,10 @@ SELECT SUM(product.price) as total_price from (transcation JOIN product ON trans
 
 SELECT SUM(price) from product where product_type='adidas'
 
+SELECT * from product INNER JOIN transcation
+
+SELECT * from product INNER JOIN transcation INNER JOIN pelanggan
+
 
 
 
