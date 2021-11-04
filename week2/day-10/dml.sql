@@ -23,7 +23,17 @@ DELETE FROM transaction_detail WHERE order_id=d_user_id;
 END %%
 
 //nomor7
-
+DELIMITER &&
+CREATE TRIGGER hapus_data_detail_transaksi
+AFTER DELETE ON transaction_detail FOR EACH ROW
+BEGIN
+DECLARE d_user_id INT;
+DECLARE d_qty INT;
+SET d_user_id=transaction_detail.order_id;
+set d_qty =transaction_detail.product_id;
+UPDATE transaction_detail SET
+total_qty=totalqty-d_qty WHERE id=d_user_id;
+END &&
 
 //nomor8
 SELECT * FROM product WHERE product.id_product NOT IN(SELECT transaction_detail.product_id FROM transaction_detail)
