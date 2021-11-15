@@ -10,7 +10,7 @@ import (
 var DB *gorm.DB
 
 func initMigrate() {
-	DB.AutoMigrate(&model.User{})
+	DB.AutoMigrate(&model.Users{})
 }
 
 func InitDB() {

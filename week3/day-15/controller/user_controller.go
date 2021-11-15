@@ -5,11 +5,11 @@ import (
 	"project/config"
 	"project/model"
 
-	"github.com/labstack/echo/v4"
+	"github.com/labstack/echo"
 )
 
 func GetUserController(c echo.Context) error {
-	var users []model.User
+	var users []model.Users
 	err := config.DB.Find(&users).Error
 	if err != nil {
 		return c.JSON(http.StatusInternalServerError, map[string]interface{}{
@@ -24,7 +24,7 @@ func GetUserController(c echo.Context) error {
 
 func CreateUserController(c echo.Context) error {
 
-	user := model.User{}
+	user := model.Users{}
 	c.Bind(&user)
 
 	err := config.DB.Save(&user).Error
@@ -35,7 +35,7 @@ func CreateUserController(c echo.Context) error {
 		})
 	}
 	return c.JSON(http.StatusOK, map[string]interface{}{
-		"message": "susccess create user",
+		"message": "success create user",
 		"user":    user,
 	})
 
